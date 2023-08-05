@@ -40,13 +40,13 @@
     --title-font-family:    'Plain-Regular', sans-serif;
     --font-bold-family:     'Plain-Bold', sans-serif;
     --font-weight-bold:     bold;
-    --span-font-size:       42px;
-    --h1-font-size:         42px;
-    --h2-font-size:         32px;
-    --h3-font-size:         24px;
+    --span-font-size:       32px;
+    --h1-font-size:         32px;
+    --h2-font-size:         28px;
+    --h3-font-size:         18px;
     --p-font-size:          18px;
-    --base-font-size:       16px;
-    --menu-font-size:       14px;
+    --base-font-size:       14px;
+    --menu-font-size:       12px;
 
     --border-radius-large:  100px;
     --border-radius-small:  5px;
@@ -611,11 +611,11 @@
   .copyright-text,
   .footer-link,
   .site-footer .social-icon {
-    margin-top: 4em;
+    margin-top: 3em;
   }
 
   .copyright-text {
-    margin-top: 2.3em;
+    margin-top: 1.3em;
   }
 
   .heading {
@@ -713,14 +713,17 @@
   @media screen and (max-width: 767px) {
 
     h1 {
-      font-size: 26px;
+      font-size: 22px;
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 22px;
     }
 
     h3 {
+      font-size: 14px;
+    }
+    p{
       font-size: 12px;
     }
 
