@@ -47,7 +47,8 @@ class TypeAsync extends HTMLSpanElement {
 customElements.define("type-async", TypeAsync, { extends: "span" });
 
 init();
-
+/* //Custom cursor//
+//If you need to use is paste in html page " <div class="cursor"></div> in beggining of body"
 async function Cursor() {
   var cursorinner = document.querySelector(".cursor");
   var a = document.querySelectorAll("a");
@@ -79,6 +80,7 @@ async function Cursor() {
   });
 }
 Cursor();
+*/
 function ChangeImage() {
   var img = document.getElementById("image-me");
   img.src = "images/project/mountain.jpg";
@@ -86,4 +88,29 @@ function ChangeImage() {
 function ChangeImageMe() {
   var img = document.getElementById("image-me");
   img.src = "images/project/ja.jpg";
+}
+
+
+/*Tutaj jest obszar wysylania maila za posrednictwem formularza*/
+function sendMail() {
+  let params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("message").value,
+  };
+  const serviceId = "service_mowllp4";
+  const tempId = "template_qvs6tej";
+
+  emailjs
+    .send(serviceId, tempId, params)
+    .then((res) => {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("message").value = "";
+      console.log(res);
+      alert("your message has been send successfully");
+    })
+    .catch((err) => console.log(err));
 }
