@@ -48,37 +48,42 @@ customElements.define("type-async", TypeAsync, { extends: "span" });
 
 init();
 
-async function Cursor(){
- 
-  var cursorinner = document.querySelector('.cursor');
-  var a = document.querySelectorAll('a');
-  
- 
-  document.addEventListener('mousemove', function(e){
+async function Cursor() {
+  var cursorinner = document.querySelector(".cursor");
+  var a = document.querySelectorAll("a");
+
+  document.addEventListener("mousemove", function (e) {
     var x = e.clientX;
     var y = e.clientY;
-    cursorinner.style.left = x + 'px';
-    cursorinner.style.top = y + 'px';
+    cursorinner.style.left = x + "px";
+    cursorinner.style.top = y + "px";
   });
 
-  document.addEventListener('mouseup', function(){
-    cursorinner.classList.remove('click')
-    cursorinner.classList.remove('cursorinnerhover')
+  document.addEventListener("mouseup", function () {
+    cursorinner.classList.remove("click");
+    cursorinner.classList.remove("cursorinnerhover");
   });
-  
-  document.addEventListener('mousedown', function(){
-    cursorinner.classList.add('click');
-    cursorinner.classList.add('cursorinnerhover')
-  });
-  
 
-  a.forEach(item => {
-    item.addEventListener('mouseover', () => {
-      cursorinner.classList.add('hover');
+  document.addEventListener("mousedown", function () {
+    cursorinner.classList.add("click");
+    cursorinner.classList.add("cursorinnerhover");
+  });
+
+  a.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      cursorinner.classList.add("hover");
     });
-    item.addEventListener('mouseleave', () => {
-      cursorinner.classList.remove('hover');
+    item.addEventListener("mouseleave", () => {
+      cursorinner.classList.remove("hover");
     });
-  })
+  });
 }
 Cursor();
+function ChangeImage() {
+  var img = document.getElementById("image-me");
+  img.src = "images/project/mountain.jpg";
+}
+function ChangeImageMe() {
+  var img = document.getElementById("image-me");
+  img.src = "images/project/ja.jpg";
+}
