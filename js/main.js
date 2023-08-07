@@ -87,7 +87,7 @@ function ChangeImage() {
 }
 function ChangeImageMe() {
   var img = document.getElementById("image-me");
-  img.src = "images/project/ja.jpg";
+  img.src = "images/project/PiotrStaron.jpg";
 }
 
 

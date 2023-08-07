@@ -6,6 +6,13 @@
       font-weight: normal;
       font-style: normal;
   }
+  @font-face {
+    font-family: 'Plain-Bold';
+    src: url('../fonts/Plain-Bold.woff2') format('woff2'),
+        url('../fonts/Plain-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
 
   @font-face {
       font-family: 'Plain-Light';
@@ -15,13 +22,6 @@
       font-style: normal;
   }
 
-  @font-face {
-      font-family: 'Plain-Bold';
-      src: url('../fonts/Plain-Bold.woff2') format('woff2'),
-          url('../fonts/Plain-Bold.woff') format('woff');
-      font-weight: bold;
-      font-style: normal;
-  }
 
   :root {
     --primary-color:        #343e92;
@@ -30,12 +30,12 @@
     --dark-color:           #171819;
     --project-bg:           #f0f8ff;
     --menu-bg:              #13156e;
-
+    --project-info:         #dddddf;
     --title-color:          #15141a;
     --gray-color:           #909090;
     --link-color:           #404040;
     --p-color:              #666262;
-
+    --red-color:            red;
     --base-font-family:     'Plain-Bold', sans-serif;
     --title-font-family:    'Oswald-bold', sans-serif;
     --font-bold-family:     'Plain-Bold', sans-serif;
@@ -397,7 +397,7 @@
     background: var(--project-bg);
   }
 
-  .project-wrapper {
+  .project-wrapper .project-wrapper-stop {
     position: relative;
   }
 
@@ -405,9 +405,13 @@
     border-radius: var(--border-radius-small);
     max-height: 50%;
   }
-
+.project-wrapper-stop img{
+  border-radius: var(--border-radius-small);
+    max-height: 50%;
+    border:solid  6px var(--red-color)
+}
   .project-info {
-    background: var(--white-color);
+    background: var(--project-info);
     border-radius: var(--border-radius-small);
     position: absolute;
     bottom: 32px;
@@ -419,7 +423,7 @@
 
   .project-info small {
     font-family: Plain-Bold;
-    color: var(--gray-color);
+    color: var(--title-color);
     position: relative;
     top: 2px;
   }
@@ -431,7 +435,23 @@
   .project-info .project-icon {
     background: var(--primary-color);
   }
-
+.project-icon-stop{
+  background: var(--red-color)
+}
+.project-icon-stop{
+   position: absolute;
+    right: 30px;
+    top: 40px;
+    background: var(--red-color);
+    border-radius: var(--border-radius-large);
+    color: var(--white-color);
+    font-size: var(--h2-font-size);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding-left: 5px;
+}
   .project-icon {
     position: absolute;
     right: 30px;
@@ -518,58 +538,10 @@
 
 
   /*---------------------------------------
-      BLOG            
-  -----------------------------------------*/
-
-  .blog-header {
-    border-radius: var(--border-radius-small);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .blog-header img {
-    border-radius: var(--border-radius-small);
-    display: block;
-  }
-
-  .blog-header-info {
-    background: linear-gradient(transparent,rgba(0,0,0,0.95));
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    padding: 2em;
-  }
-
-  .blog-header-info h3 {
-    max-width: 80%;
-  }
-
-  .blog-header-info a {
-    color: var(--white-color);
-  }
-
-  .blog-header-info a:hover {
-    color: var(--secondary-color);
-  }
-
-  .blog-sidebar img {
-    border-radius: var(--border-radius-small);
-    width: 159px;
-    margin-right: 22px;
-  }
-
-  .blog-sidebar h3 {
-    font-size: 18px;
-  }
-
-
-
-  /*---------------------------------------
      CONTACT              
   -----------------------------------------*/
 
-  .newsletter-form .form-control,
+  .form-control,
   .contact-form .form-control {
     box-shadow: none;
     background: var(--project-bg);
@@ -578,7 +550,7 @@
     margin: 14px 0;
   }
 
-  .newsletter-form button,
+  .button,
   .contact-form #submit-button {
     background: var(--primary-color);
     border-radius: var(--border-radius-large);
@@ -636,34 +608,6 @@
     text-transform: uppercase;
   }
 
-  /*---------------------------------------
-     SOCIAL ICON              
-  -----------------------------------------*/
-
-  .social-icon {
-    position: relative;
-    padding: 0;
-    margin: 4em 0 0 0;
-  }
-
-  .social-icon li {
-    display: inline-block;
-    list-style: none;
-  }
-
-  .social-icon li a {
-    text-decoration: none;
-    display: inline-block;
-    font-size: var(--base-font-size);
-    margin: 10px;
-    text-align: center;
-  }
-  .bar {
-    width:3px;
-    height:49px;
-    position:absolute;
-    top:-1px;
-  }
   /*---------------------------------------
      RESPONSIVE STYLES              
   -----------------------------------------*/
