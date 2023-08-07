@@ -90,7 +90,7 @@ function ChangeImageMe() {
   img.src = "images/project/PiotrStaron.jpg";
 }
 
-
+//Dodać validacię zeby nikt nie wysyłał maili na okrągło//
 /*Tutaj jest obszar wysylania maila za posrednictwem formularza*/
 function sendMail() {
   let params = {
@@ -98,10 +98,14 @@ function sendMail() {
     email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
     message: document.getElementById("message").value,
+   
   };
+ 
   const serviceId = "service_mowllp4";
   const tempId = "template_qvs6tej";
+  console.log( params.phone.length)
 
+if(params.name.length>=2 && params.email.includes("@")  && params.phone.length <=11 && params.message.length>= 1){
   emailjs
     .send(serviceId, tempId, params)
     .then((res) => {
@@ -110,7 +114,12 @@ function sendMail() {
       document.getElementById("phone").value = "";
       document.getElementById("message").value = "";
       console.log(res);
-      alert("your message has been send successfully");
+      alert("Sended");
     })
     .catch((err) => console.log(err));
+}else{
+  alert("Your form is valid");
 }
+
+}
+
