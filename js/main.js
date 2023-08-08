@@ -103,10 +103,10 @@ function sendMail() {
  
   const serviceId = "service_mowllp4";
   const tempId = "template_qvs6tej";
-  console.log( params.phone.length)
+
 
 if(params.name.length>=2 && params.email.includes("@")  && params.phone.length <=11 && params.message.length>= 1){
-  emailjs
+  emailjs 
     .send(serviceId, tempId, params)
     .then((res) => {
       document.getElementById("name").value = "";
