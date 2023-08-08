@@ -98,28 +98,29 @@ function sendMail() {
     email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
     message: document.getElementById("message").value,
-   
   };
- 
+
   const serviceId = "service_mowllp4";
   const tempId = "template_qvs6tej";
 
-
-if(params.name.length>=2 && params.email.includes("@")  && params.phone.length <=11 && params.message.length>= 1){
-  emailjs 
-    .send(serviceId, tempId, params)
-    .then((res) => {
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("phone").value = "";
-      document.getElementById("message").value = "";
-      console.log(res);
-      alert("Sended");
-    })
-    .catch((err) => console.log(err));
-}else{
-  alert("Your form is valid");
+  if (
+    params.name.length >= 2 &&
+    params.email.includes("@") &&
+    params.phone.length <= 11 &&
+    params.message.length >= 1
+  ) {
+    emailjs
+      .send(serviceId, tempId, params)
+      .then((res) => {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert("Sended");
+      })
+      .catch((err) => console.log(err));
+  } else {
+    alert("Your form is valid");
+  }
 }
-
-}
-
