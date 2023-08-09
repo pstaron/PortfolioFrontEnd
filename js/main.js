@@ -1,9 +1,10 @@
+//Used for changing(animation), text in main page//
 async function init() {
   const node = document.querySelector("#type-context");
 
   await sleep(1000);
   node.innerHTML = "";
-  await node.type("I'm " + '\xa0\xa0');
+  await node.type("I'm " + "\xa0\xa0");
   //\xa0\xa0 is no brake speace character//
   while (true) {
     await node.type("Piotr");
@@ -81,6 +82,7 @@ async function Cursor() {
 }
 Cursor();
 */
+//Used for changing photo when clicking Mountain Climbing button and reverse it to the basic photo//
 function ChangeImage() {
   var img = document.getElementById("image-me");
   img.src = "images/project/mountain.jpg";
@@ -126,30 +128,32 @@ function sendMail() {
 }
 
 const updateClipCircleValue = () => {
-
   let documentScrollHeight = document.documentElement.scrollHeight;
   let documentScrollPosition = window.scrollY;
-  let documentScrollPercentage = ((documentScrollPosition / documentScrollHeight) * 100);
-  let clipCircleValue = documentScrollPercentage + '%';
-  
-  document.documentElement.style.setProperty('--clip-circle', clipCircleValue);
-}
+  let documentScrollPercentage =
+    (documentScrollPosition / documentScrollHeight) * 100;
+  let clipCircleValue = documentScrollPercentage + "%";
 
-window.addEventListener('scroll', updateClipCircleValue);
+  document.documentElement.style.setProperty("--clip-circle", clipCircleValue);
+};
 
-var imgs = document.querySelectorAll('.slider img');
-var dots = document.querySelectorAll('.dot');
-var currentImg = 0; // index of the first image 
+window.addEventListener("scroll", updateClipCircleValue);
+
+var imgs = document.querySelectorAll(".slider img");
+var dots = document.querySelectorAll(".dot");
+var currentImg = 0; // index of the first image
 const interval = 3000; // duration(speed) of the slide
 
+//Used for changing slides on CV//
 function changeSlide(n) {
-  for (var i = 0; i < imgs.length; i++) { // reset
+  for (var i = 0; i < imgs.length; i++) {
+    // reset
     imgs[i].style.opacity = 0;
-    dots[i].className = dots[i].className.replace(' active', '');
+    dots[i].className = dots[i].className.replace(" active", "");
   }
 
   currentImg = n;
 
   imgs[currentImg].style.opacity = 1;
-  dots[currentImg].className += ' active';
+  dots[currentImg].className += " active";
 }
