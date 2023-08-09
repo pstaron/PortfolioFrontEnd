@@ -215,7 +215,7 @@
   }
 .pdfCV{
   width: 100%;
-  height: 900px;
+  height: 1000px;
 }
  
 
@@ -558,7 +558,6 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    background: var(--secondary-color);
     border: solid black;
     float: right;
     margin-top: -12px;
@@ -572,17 +571,29 @@
     background-color: var(--progressJS);
     animation: javascript 15s normal forwards;
   }
+  .javasriptProc{
+    background: var(--progressJS);
+  }
   .reactProgress{
     background-color: var(--progressReact);
     animation: react 15s normal forwards;
+  }
+  .reactProc{
+    background:  var(--progressReact)
   }
   .htmlProgress{
     background-color: var(--progressHTML);
     animation: html 15s normal forwards;
   }
+  .htmlProc{
+    background:  var(--progressHTML);
+  }
   .sassProgress{
     background-color: var(--progressSass);
     animation: sass 15s normal forwards;
+  }
+  .sassProc{
+    background:  var(--progressSass);
   }
 
   @keyframes javascript{
@@ -736,8 +747,14 @@
   }
 
   @media screen and (max-width: 767px) {
-    .me{
-      width:100%;
+    .hero-text{
+      text-align: center;
+    }
+    .hero-text strong{
+      margin-right: 15%;
+    }
+    .me{margin-left: 10%;
+      width:80%;
       border: 2px solid var(--secondary-color);
       border-radius: var(--border-radius-large);
     }
