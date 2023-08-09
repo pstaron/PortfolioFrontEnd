@@ -1,10 +1,10 @@
 async function init() {
-  const node = document.querySelector("#type-text");
+  const node = document.querySelector("#type-context");
 
   await sleep(1000);
-  node.innerText = "";
-  await node.type("I'm_");
-
+  node.innerHTML = "";
+  await node.type("I'm " + '\xa0\xa0');
+  //\xa0\xa0 is no brake speace character//
   while (true) {
     await node.type("Piotr");
     await sleep(2000);
@@ -124,3 +124,15 @@ function sendMail() {
     alert("Your form is valid");
   }
 }
+
+const updateClipCircleValue = () => {
+
+  let documentScrollHeight = document.documentElement.scrollHeight;
+  let documentScrollPosition = window.scrollY;
+  let documentScrollPercentage = ((documentScrollPosition / documentScrollHeight) * 100);
+  let clipCircleValue = documentScrollPercentage + '%';
+  
+  document.documentElement.style.setProperty('--clip-circle', clipCircleValue);
+}
+
+window.addEventListener('scroll', updateClipCircleValue);
