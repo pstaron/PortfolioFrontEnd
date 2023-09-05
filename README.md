@@ -10,9 +10,10 @@ https://www.emailjs.com/
 
 
 Stack used for this project:
+JavaScript
 SMTPJS
 Email.js
-JavaScript
 HTML
 CSS
 BootStrap
+
