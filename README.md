@@ -7,6 +7,7 @@ Here you can find instruction how to install and run my code.
 WebSites used for this project: 
 https://www.emailjs.com/
 
+
 Stack used for this project:
 JavaScript
 SMTPJS
