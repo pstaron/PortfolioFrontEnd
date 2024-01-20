@@ -52,6 +52,7 @@
   --border-radius-small: 5px;
 
   --progressJS: #f3c931;
+  --progressPHP: #3f6ae0;
   --progressReact: #3889d4;
   --progressHTML: #eb981b;
   --progressSass: #e374e7;
@@ -571,6 +572,14 @@ a:focus {
 .javasriptProc {
   background: var(--progressJS);
 }
+.phpProc{
+  background: var(--progressPHP);
+
+}
+.phpProgress{
+  animation: php 15s normal forwards;
+  background: var(--progressPHP);
+}
 .reactProgress {
   background-color: var(--progressReact);
   animation: react 15s normal forwards;
@@ -598,6 +607,11 @@ a:focus {
     width: 85%;
   }
 }
+@keyframes php {
+  100% {
+    width: 55%;
+  }
+}
 @keyframes react {
   100% {
     width: 65%;
@@ -618,13 +632,13 @@ CV
 -----------------------------------------*/
 .slider {
   text-align: center;
-  width: 60%;
-  height: 900px;
+  width: 63%;
+  height: 800px;
   position: relative;
 }
 
 .slider img {
-  width: 90%;
+  width: 95%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -661,7 +675,8 @@ CV
 .pdfdownload {
   position: relative;
   text-align: center;
-  left: 36.5%;
+  left: 42%;
+  height: 50px;
 }
 /*---------------------------------------
      CONTACT              
