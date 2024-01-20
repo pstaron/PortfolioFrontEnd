@@ -4,7 +4,6 @@ Here you can find instruction how to install and run my code.
 
 (Update coming soon)
 
-
 WebSites used for this project: 
 https://www.emailjs.com/
 
